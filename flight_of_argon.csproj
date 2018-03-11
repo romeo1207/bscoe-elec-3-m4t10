@@ -232,6 +232,7 @@
     <Compile Include="Assets\objectExplosion.cs" />
     <Compile Include="Assets\ParticleExplosion.cs" />
     <Compile Include="Assets\Player.cs" />
+    <Compile Include="Assets\ScoreManager.cs" />
     <Compile Include="Assets\WorldSkies\Demo\Scripts\LookCamera.cs" />
     <Compile Include="Assets\WorldSkies\Demo\Scripts\SkyboxChanger.cs" />
   </ItemGroup>
