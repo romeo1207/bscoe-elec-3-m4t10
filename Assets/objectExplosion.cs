@@ -7,13 +7,14 @@ public class objectExplosion : MonoBehaviour {
     public ParticleSystem enemyDamaged;
     public bool _sabog;
     public int _EnemyHealth;
+    public int _HalfLife;
     public bool _isDamaged;
+    public int AddScore;
     AudioSource _audioSource;
     // Use this for initialization
     void Start () {
         _sabog = false;
         _isDamaged = false;
-        _EnemyHealth = 10;
         _audioSource = GetComponent<AudioSource>();
     }
 	
@@ -30,7 +31,7 @@ public class objectExplosion : MonoBehaviour {
                 _EnemyHealth--;
                 print(_EnemyHealth);
             }
-            if (_EnemyHealth <= 6 && !_isDamaged)
+            if (_EnemyHealth <= _HalfLife && !_isDamaged)
             {
                 enemyDamaged.Play();
                 _isDamaged = true;
@@ -39,9 +40,10 @@ public class objectExplosion : MonoBehaviour {
             {
                 gameObject.tag = "Untagged";
                 Destroy(gameObject, 1f);
+                Destroy(gameObject.transform.parent);
                 enemyExplosion.Play();
                 _sabog = true;
-                ScoreManager.Score += 10;
+                ScoreManager.Score += AddScore;
                 _audioSource.Play();
             }
         }
