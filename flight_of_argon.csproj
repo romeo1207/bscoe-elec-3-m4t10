@@ -225,16 +225,17 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\anykey.cs" />
-    <Compile Include="Assets\controls.cs" />
-    <Compile Include="Assets\musicplayer.cs" />
-    <Compile Include="Assets\ObjectDestroy.cs" />
-    <Compile Include="Assets\objectExplosion.cs" />
-    <Compile Include="Assets\ParticleExplosion.cs" />
-    <Compile Include="Assets\Player.cs" />
-    <Compile Include="Assets\ScoreManager.cs" />
-    <Compile Include="Assets\WorldSkies\Demo\Scripts\LookCamera.cs" />
-    <Compile Include="Assets\WorldSkies\Demo\Scripts\SkyboxChanger.cs" />
+    <Compile Include="Assets\EXTERNAL ASSETS\WorldSkies\Demo\Scripts\LookCamera.cs" />
+    <Compile Include="Assets\EXTERNAL ASSETS\WorldSkies\Demo\Scripts\SkyboxChanger.cs" />
+    <Compile Include="Assets\SCRIPTS\anykey.cs" />
+    <Compile Include="Assets\SCRIPTS\BetterWaypointFollower.cs" />
+    <Compile Include="Assets\SCRIPTS\controls.cs" />
+    <Compile Include="Assets\SCRIPTS\musicplayer.cs" />
+    <Compile Include="Assets\SCRIPTS\ObjectDestroy.cs" />
+    <Compile Include="Assets\SCRIPTS\objectExplosion.cs" />
+    <Compile Include="Assets\SCRIPTS\ParticleExplosion.cs" />
+    <Compile Include="Assets\SCRIPTS\Player.cs" />
+    <Compile Include="Assets\SCRIPTS\ScoreManager.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\Standard Assets\CrossPlatformInput\CrossPlatformInputGuidelines.txt" />
