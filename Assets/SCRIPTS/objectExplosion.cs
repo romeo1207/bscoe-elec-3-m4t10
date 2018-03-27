@@ -1,10 +1,12 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class objectExplosion : MonoBehaviour {
     public ParticleSystem enemyExplosion;
     public ParticleSystem enemyDamaged;
+    //public Slider enemySlider;
     public bool _sabog;
     public int _EnemyHealth;
     public int _HalfLife;
@@ -20,7 +22,8 @@ public class objectExplosion : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        
+        //enemySlider.value = _EnemyHealth;
+        //enemySlider.maxvalue = _EnemyHealth;
 	}
     void OnParticleCollision(GameObject other)
     {

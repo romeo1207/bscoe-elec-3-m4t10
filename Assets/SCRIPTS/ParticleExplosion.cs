@@ -1,10 +1,13 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
 public class ParticleExplosion : MonoBehaviour {
     public ParticleSystem particleExplosion;
+    public Slider HealthSlider;
+    public int PlayerHealth;
     Rigidbody _rigidbody;
     bool _shipCollided = false;
     AudioSource _audioSource;
@@ -13,11 +16,12 @@ public class ParticleExplosion : MonoBehaviour {
     void Start() {
         _rigidbody = GetComponent<Rigidbody>();
         _audioSource = GetComponent<AudioSource>();
+        PlayerHealth = 100;
     }
 
     // Update is called once per frame
     void Update() {
-       
+        HealthSlider.value = PlayerHealth;
     }
 
     IEnumerator ExecuteAfterTime(){
@@ -30,7 +34,8 @@ public class ParticleExplosion : MonoBehaviour {
         if(_shipCollided == false){
             if((gameObject.tag == "Player" && collision.collider.tag == "obstacle") || (gameObject.tag == "Player" && collision.collider.tag == "enemy"))
             {
-                _audioSource.Play();
+                PlayerHealth-=20;
+               /* _audioSource.Play();
                 particleExplosion.Play();
                 print("Boom!");
                 Destroy(GameObject.FindWithTag("bullet"));
@@ -40,9 +45,24 @@ public class ParticleExplosion : MonoBehaviour {
                     Destroy(gameObjects[i]);
                 }
                 _shipCollided = true;
-                StartCoroutine("ExecuteAfterTime");
+                StartCoroutine("ExecuteAfterTime");*/
             }
             else if (gameObject.tag == "Player" && collision.collider.tag == "terrain")
+            {
+                PlayerHealth-=20;
+                /*particleExplosion.Play();
+                _audioSource.Play();
+                print("Terrain!");
+                Destroy(GameObject.FindWithTag("bullet"));
+                gameObjects = GameObject.FindGameObjectsWithTag("bullet");
+                for (var i = 0; i < gameObjects.Length; i++)
+                {
+                    Destroy(gameObjects[i]);
+                }
+                _shipCollided = true;
+                StartCoroutine("ExecuteAfterTime");*/
+            }
+            if (PlayerHealth <= 0)
             {
                 particleExplosion.Play();
                 _audioSource.Play();
